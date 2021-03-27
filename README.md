@@ -1,16 +1,53 @@
 ### Hi there 👋
 
-<!--
-**rodriguezcoding/rodriguezcoding** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
-Here are some ideas to get you started:
+Hello there! My name is Luis Rodriguez, bornt in the 🇩🇴 and I am a Software Developer / Software Test Engineer (SDET).
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+I also have an enthusiasm for Web Exploitation and Reverse Engineering.
+
+## Technologies I Use
+
+<table>
+  <tbody>
+    <tr valign="top">
+      <td width="15%" align="center">
+        <span><strong>JavaScript</strong></span><br><br><br>
+        <img height="64px" src="https://cdn.svgporn.com/logos/javascript.svg">
+      </td>
+      <td width="15%" align="center">
+        <span><strong>TypeScript</strong></span><br><br><br>
+        <img height="64px" src="https://cdn.svgporn.com/logos/typescript-icon.svg">
+      </td>
+      <td width="15%" align="center">
+        <span><strong>Cypress</strong></span><br><br><br>
+        <img height="64px" src="https://cdn.svgporn.com/logos/cypress.svg">
+      </td>
+      <td width="15%" align="center">
+        <span><strong>TestCafe</strong></span><br><br><br>
+        <img width="104px" src="https://devexpress.github.io/testcafe/images/site-header-logo.svg">
+      </td>
+      <td width="15%" align="center">
+        <span><strong>Mocha</strong></span><br><br><br>
+        <img height="64px" src="https://cdn.svgporn.com/logos/mocha.svg">
+      </td>
+      <td width="15%" align="center">
+        <span><strong>Chai</strong></span><br><br><br>
+        <img height="64px" src="https://cdn.svgporn.com/logos/chai.svg">
+      </td>
+      <td width="15%" align="center">
+        <span><strong>Node.js</strong></span><br><br><br>
+        <img height="64px" src="https://cdn.svgporn.com/logos/nodejs-icon.svg">
+      </td>
+      </tbody>
+</table>
+<br>
+
+## Let's Connect! 
+
+  <a href="https://www.linkedin.com/in/luis-rodriguezcastro/">
+    <img align="left" width="30px" src="https://cdn.svgporn.com/logos/linkedin-icon.svg" />
+  </a>
+
+
+
+
