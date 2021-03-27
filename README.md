@@ -36,17 +36,17 @@ I also have an enthusiasm for Web Exploitation and Reverse Engineering.
       </td>
       </tbody>
 </table>
-<table>
+<table align="center">
     <tbody>
-      <td width="20%" align="center">
+      <td width="15%" align="center">
         <span><strong>Node.js</strong></span><br><br><br>
         <img height="64px" src="https://cdn.svgporn.com/logos/nodejs-icon.svg">
       </td>
-        <td width="20%" align="center">
+        <td width="15%" align="center">
         <span><strong>React</strong></span><br><br><br>
         <img height="64px" src="https://cdn.svgporn.com/logos/react.svg">
       </td>
-      <td width="20%" align="center">
+      <td width="15%" align="center">
         <span><strong>Ruby</strong></span><br><br><br>
         <img height="64px" src="https://cdn.svgporn.com/logos/ruby.svg">
       </td>
