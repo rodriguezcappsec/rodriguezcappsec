@@ -4,7 +4,7 @@
   <img src="https://media.giphy.com/media/21PeokB8uIQvjIhVO5/giphy.gif" width="400px">
  </p>
 
-Hello there! My name is Luis Rodriguez, bornt in the :dominican_republic: and I am a Software Developer / Software Test Engineer (SDET).
+Hello there! My name is Luis Rodriguez, bornt in the DR and I am a Software Developer / Software Test Engineer (SDET).
 
 I also have an enthusiasm for Web Exploitation and Reverse Engineering.
 
