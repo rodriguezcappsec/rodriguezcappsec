@@ -7,7 +7,7 @@ I also have an enthusiasm for Web Exploitation and Reverse Engineering.
 
 ## Technologies I Use
 
-<table>
+<table align="center">
   <tbody>
     <tr valign="top">
       <td width="15%" align="center">
