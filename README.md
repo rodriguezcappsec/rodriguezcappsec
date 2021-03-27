@@ -26,7 +26,7 @@ I also have an enthusiasm for Web Exploitation and Reverse Engineering.
         <span><strong>TestCafe</strong></span><br><br><br>
         <img width="104px" src="https://devexpress.github.io/testcafe/images/site-header-logo.svg">
       </td>
-              <td width="15%" align="center">
+        <td width="15%" align="center">
         <span><strong>Mocha</strong></span><br><br><br>
         <img height="64px" src="https://cdn.svgporn.com/logos/mocha.svg">
       </td>
@@ -38,15 +38,15 @@ I also have an enthusiasm for Web Exploitation and Reverse Engineering.
 </table>
 <table>
     <tbody>
-      <td width="15%" align="center">
+      <td width="20%" align="center">
         <span><strong>Node.js</strong></span><br><br><br>
         <img height="64px" src="https://cdn.svgporn.com/logos/nodejs-icon.svg">
       </td>
-        <td width="15%" align="center">
+        <td width="20%" align="center">
         <span><strong>React</strong></span><br><br><br>
         <img height="64px" src="https://cdn.svgporn.com/logos/react.svg">
       </td>
-      <td width="15%" align="center">
+      <td width="20%" align="center">
         <span><strong>Ruby</strong></span><br><br><br>
         <img height="64px" src="https://cdn.svgporn.com/logos/ruby.svg">
       </td>
