@@ -1,5 +1,8 @@
-### Hi there 👋
-
+### Hello, Hola!! 👋
+<p>
+  <img src="https://media.giphy.com/media/YRQ1DI6hJ16PwpXSWM/giphy.gif" width="300px">
+  <img src="https://media.giphy.com/media/d8i1QJclKIoiWiSHHz/giphy.gif" width="400px">
+</p>
 
 Hello there! My name is Luis Rodriguez, bornt in the :dominican_republic: and I am a Software Developer / Software Test Engineer (SDET).
 
