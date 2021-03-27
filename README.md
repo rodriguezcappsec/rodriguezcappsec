@@ -53,7 +53,7 @@ I also have an enthusiasm for Web Exploitation and Reverse Engineering.
 ## Let's Connect! 
 
   <a href="https://www.linkedin.com/in/luis-rodriguezcastro/">
-    <img align="left" width="30px" src="https://cdn.svgporn.com/logos/linkedin-icon.svg" />
+    <img align="left" width="30px" target="_blank" src="https://cdn.svgporn.com/logos/linkedin-icon.svg" />
   </a>
 
 
