@@ -1,7 +1,7 @@
 ### Hi there 👋
 
 
-Hello there! My name is Luis Rodriguez, bornt in the 🇩🇴 and I am a Software Developer / Software Test Engineer (SDET).
+Hello there! My name is Luis Rodriguez, bornt in the :dominican_republic: and I am a Software Developer / Software Test Engineer (SDET).
 
 I also have an enthusiasm for Web Exploitation and Reverse Engineering.
 
