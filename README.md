@@ -2,6 +2,7 @@
 <p>
   <img src="https://media.giphy.com/media/13HgwGsXF0aiGY/giphy.gif" width="300px">
   <img src="https://media.giphy.com/media/21PeokB8uIQvjIhVO5/giphy.gif" width="400px">
+  <img src="https://media.giphy.com/media/NvpEgwElEHaOQ/giphy.gif" width="400px">
  </p>
 
 Hello there! My name is Luis Rodriguez, bornt in the DR and I am a Software Developer / Software Engineer in Test (SDET).
