@@ -26,6 +26,10 @@ I also have an enthusiasm for Web Exploitation and Reverse Engineering.
         <img height="64px" src="https://cdn.svgporn.com/logos/cypress.svg">
       </td>
       <td width="15%" align="center">
+        <span><strong>Selenium(JS)</strong></span><br><br><br>
+        <img height="64px" src="https://cdn.svgporn.com/logos/selenium.svg">
+      </td>
+      <td width="15%" align="center">
         <span><strong>TestCafe</strong></span><br><br><br>
         <img width="104px" src="https://devexpress.github.io/testcafe/images/site-header-logo.svg">
       </td>
