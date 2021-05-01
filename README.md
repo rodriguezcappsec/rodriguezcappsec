@@ -8,6 +8,11 @@ Hello there! My name is Luis Rodriguez, bornt in the DR and I am a Software Deve
 
 I also have an enthusiasm for Web Exploitation and Reverse Engineering.
 
+<---------------------------------------------------------------------->
+Hola! Mi nombre es Luis Rodriguez, nacido en la Republica Dominicana y soy un Desarrolador de aplicaciones / Desarrollador de aplicaciones para pruebas (SDET).
+
+Tambien tengo un entusiasmo para Exploitacion Web and Ingenieria en Reverse de aplicaciones.
+
 ## Technologies I Use
 
 <table align="center">
