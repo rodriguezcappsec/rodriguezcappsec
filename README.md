@@ -70,7 +70,7 @@ Tambien tengo un entusiasmo para la Exploitacion Web, Ingenieria en Reverse de a
 
 ## Let's Connect! 
 
-  <a href="https://www.linkedin.com/in/luis-rodriguezcastro/" target='_blank'>
+  <a href="https://www.linkedin.com/in/luis-rodriguezcastro/" target="_blank">
     <img align="left" width="30px" target="_blank" src="https://cdn.svgporn.com/logos/linkedin-icon.svg" />
   </a>
 
