@@ -64,6 +64,10 @@ Tambien tengo un entusiasmo para la Exploitacion Web, Ingenieria en Reverse de a
         <span><strong>Ruby</strong></span><br><br><br>
         <img height="64px" src="https://cdn.svgporn.com/logos/ruby.svg">
       </td>
+      <td width="15%" align="center">
+        <span><strong>C#</strong></span><br><br><br>
+        <img height="64px" src="https://cdn.svgporn.com/logos/c-sharp.svg">
+      </td>
   </tbody>
 </table>
 <br>
