@@ -9,7 +9,7 @@ Hello there! My name is Luis Rodriguez, bornt in the DR and I work as an Applica
 
 I have an enthusiasm for Web Exploitation, Reverse Engineering and Muay Thai
 
-<---------------------------------------------------------------------->
+----------------------------------------------------------------------------
 
 Hola! Mi nombre es Luis Rodriguez, nacido en la Republica Dominicana y soy un Ingeniero de Cyberseguridad para applicaciones y antes trabajaba como Desarrolador de aplicaciones & Desarrollador de aplicaciones para pruebas (SDET).
 
