@@ -15,7 +15,7 @@ Hola! Mi nombre es Luis Rodriguez, nacido en la Republica Dominicana y soy un In
 
 Tambien tengo un entusiasmo para la Exploitacion Web, Ingenieria en Reverse de aplicaciones y Muay Thai
 
-## Technologies I Use
+<!--## Technologies I Use-->
 
 <!--<table align="center">
   <tbody>
