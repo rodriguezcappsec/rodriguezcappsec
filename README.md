@@ -17,7 +17,7 @@ Tambien tengo un entusiasmo para la Exploitacion Web, Ingenieria en Reverse de a
 
 ## Technologies I Use
 
-<table align="center">
+<!--<table align="center">
   <tbody>
     <tr valign="top">
       <td width="15%" align="center">
@@ -70,7 +70,7 @@ Tambien tengo un entusiasmo para la Exploitacion Web, Ingenieria en Reverse de a
       </td>
   </tbody>
 </table>
-<br>
+<br>-->
 
 ## Let's Connect! 
 
