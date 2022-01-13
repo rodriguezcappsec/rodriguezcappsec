@@ -5,13 +5,13 @@
   <img src="https://media.giphy.com/media/NvpEgwElEHaOQ/giphy.gif" width="250">
  </p>
 
-Hello there! My name is Luis Rodriguez, bornt in the DR and I am a Software Developer / Software Engineer in Test (SDET).
+Hello there! My name is Luis Rodriguez, bornt in the DR and I work as an Application Security Engineer former Developer & SDET.
 
-I also have an enthusiasm for Web Exploitation, Reverse Engineering and Muay Thai
+I have an enthusiasm for Web Exploitation, Reverse Engineering and Muay Thai
 
 <---------------------------------------------------------------------->
 
-Hola! Mi nombre es Luis Rodriguez, nacido en la Republica Dominicana y soy un Desarrolador de aplicaciones / Desarrollador de aplicaciones para pruebas (SDET).
+Hola! Mi nombre es Luis Rodriguez, nacido en la Republica Dominicana y soy un Ingeniero de Cyberseguridad para applicaciones y antes trabajaba como Desarrolador de aplicaciones & Desarrollador de aplicaciones para pruebas (SDET).
 
 Tambien tengo un entusiasmo para la Exploitacion Web, Ingenieria en Reverse de aplicaciones y Muay Thai
 
