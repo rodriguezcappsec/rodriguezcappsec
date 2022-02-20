@@ -13,7 +13,7 @@ I have an enthusiasm for Web Exploitation, Reverse Engineering, develop security
 
 Hola! Mi nombre es Luis Rodriguez, nacido en la Republica Dominicana y soy un Ingeniero de Cyberseguridad para applicaciones y antes trabajaba como Desarrolador de aplicaciones & Desarrollador de aplicaciones para pruebas (SDET).
 
-Tambien tengo un entusiasmo para la Exploitacion Web, Ingenieria en Reverse de aplicaciones y Muay Thai
+Tambien tengo un entusiasmo para la Exploitacion Web, Ingenieria en Reverse de aplicaciones, desarrollo de applicaciones para cyberseguridad y Muay Thai
 
 <!--## Technologies I Use-->
 
