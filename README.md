@@ -7,7 +7,7 @@
 
 Hello there! My name is Luis Rodriguez, bornt in the DR and I work as an Application Security Engineer former Developer & SDET.
 
-I have an enthusiasm for Web Exploitation, Reverse Engineering and Muay Thai
+I have an enthusiasm for Web Exploitation, Reverse Engineering, develop security tools and Muay Thai
 
 ----------------------------------------------------------------------------
 
