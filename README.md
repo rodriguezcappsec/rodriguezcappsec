@@ -7,13 +7,13 @@
 
 Hello there! My name is Luis Rodriguez a Developer & SDET, bornt in the DR and I work as an Application Security Engineer.
 
-I have an enthusiasm for Web Exploitation, Reverse Engineering, develop security tools, electronics and Muay Thai
+I have an enthusiasm for Web Exploitation, Secure Code Review, developing security tools, electronics and Muay Thai
 
 ----------------------------------------------------------------------------
 
 Hola! Mi nombre es Luis Rodriguez un Desarrollador y SDET, nacido en la Republica Dominicana y soy un Ingeniero de Cyberseguridad para applicaciones.
 
-Tambien tengo un entusiasmo para la Exploitacion Web, Ingenieria en Reverse de aplicaciones, desarrollo de applicaciones para cyberseguridad, electronica y Muay Thai
+Tambien tengo un entusiasmo para la Exploitacion Web, Secure Code Review, desarrollo de applicaciones para cyberseguridad, electronica y Muay Thai
 
 <!--## Technologies I Use-->
 
