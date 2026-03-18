@@ -4,20 +4,31 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Luis Rodriguez Castro | AppSec Engineer</title>
-    <meta name="description" content="AppSec portfolio for Luis Rodriguez Castro — Application Security Engineer" />
+    <title>Luis AppSec</title>
+    <meta name="description"
+        content="Application Security portfolio for Luis Rodriguez Castro — secure design, threat modeling, cloud security, and security tooling." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap"
+        rel="stylesheet">
     <style>
         :root {
-            --bg: #0b1020;
-            --bg-soft: #121933;
-            --card: rgba(18, 25, 51, 0.78);
-            --text: #e8ecff;
-            --muted: #a7b0d6;
-            --accent: #6ee7b7;
-            --accent-2: #7dd3fc;
-            --border: rgba(255, 255, 255, 0.10);
-            --shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
-            --max: 1120px;
+            --bg: #060b14;
+            --bg-2: #0a1222;
+            --sidebar: rgba(9, 16, 30, 0.9);
+            --panel: rgba(12, 20, 38, 0.82);
+            --panel-2: rgba(15, 25, 46, 0.92);
+            --text: #edf4ff;
+            --muted: #98abc8;
+            --line: rgba(157, 176, 207, 0.14);
+            --line-strong: rgba(125, 211, 252, 0.26);
+            --accent: #7dd3fc;
+            --accent-2: #6ee7b7;
+            --success: #bbf7d0;
+            --shadow: 0 24px 70px rgba(0, 0, 0, 0.42);
+            --radius: 22px;
+            --sidebar-width: 310px;
         }
 
         * {
@@ -30,13 +41,28 @@
 
         body {
             margin: 0;
-            font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            min-height: 100vh;
             color: var(--text);
+            font-family: Inter, system-ui, sans-serif;
+            font-size: 20px;
             background:
-                radial-gradient(circle at top left, rgba(125, 211, 252, 0.12), transparent 30%),
-                radial-gradient(circle at top right, rgba(110, 231, 183, 0.12), transparent 30%),
-                linear-gradient(180deg, #08101f 0%, #0b1020 60%, #070b16 100%);
-            line-height: 1.6;
+                radial-gradient(circle at 12% 0%, rgba(125, 211, 252, 0.14), transparent 25%),
+                radial-gradient(circle at 90% 8%, rgba(110, 231, 183, 0.10), transparent 18%),
+                linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 55%, #050912 100%);
+            line-height: 1.65;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 34px 34px;
+            mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.32), transparent 78%);
+            opacity: 0.14;
         }
 
         a {
@@ -49,187 +75,347 @@
             display: block;
         }
 
-        .container {
-            width: min(var(--max), calc(100% - 2rem));
-            margin: 0 auto;
+        code,
+        pre {
+            font-family: "JetBrains Mono", monospace;
         }
 
-        .nav {
+        .app {
+            display: grid;
+            grid-template-columns: var(--sidebar-width) 1fr;
+            min-height: 100vh;
+        }
+
+        .sidebar {
             position: sticky;
             top: 0;
-            z-index: 50;
-            backdrop-filter: blur(16px);
-            background: rgba(11, 16, 32, 0.72);
-            border-bottom: 1px solid var(--border);
+            height: 100vh;
+            padding: 1.2rem;
+            border-right: 1px solid var(--line);
+            background: linear-gradient(180deg, rgba(8, 14, 27, 0.92), rgba(6, 11, 20, 0.94));
+            backdrop-filter: blur(14px);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            z-index: 10;
         }
 
-        .nav-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0.95rem 0;
-            gap: 1rem;
+        .sidebar-card,
+        .panel,
+        .module,
+        .contact-card {
+            position: relative;
+            border: 1px solid var(--line);
+            background: linear-gradient(180deg, rgba(15, 24, 42, 0.9), rgba(8, 14, 27, 0.9));
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .sidebar-card::before,
+        .panel::before,
+        .module::before,
+        .contact-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            padding: 1px;
+            background: linear-gradient(180deg, rgba(125, 211, 252, 0.18), rgba(255, 255, 255, 0.02));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        .sidebar-card {
+            padding: 1rem;
         }
 
         .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-family: "Space Grotesk", Inter, sans-serif;
             font-weight: 800;
             letter-spacing: 0.02em;
+            margin-bottom: 0.8rem;
         }
 
-        .brand span {
+        .brand-mark {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            filter: drop-shadow(0 0 14px rgba(125, 211, 252, 0.28));
+        }
+
+        .brand span span {
             color: var(--accent);
         }
 
-        .nav-links {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
+        .role-tag {
+            display: inline-flex;
             align-items: center;
+            gap: 0.45rem;
+            padding: 0.4rem 0.65rem;
+            border-radius: 999px;
+            border: 1px solid rgba(125, 211, 252, 0.18);
+            background: rgba(125, 211, 252, 0.06);
+            color: #dceefe;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
         }
 
-        .nav-links a {
+        .sidebar p {
+            margin: 0;
             color: var(--muted);
             font-size: 0.95rem;
-            transition: color 0.2s ease;
         }
 
-        .nav-links a:hover,
-        .nav-links a:focus {
+        .status-box {
+            margin-top: 1rem;
+            padding: 0.8rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            background: rgba(255, 255, 255, 0.025);
+        }
+
+        .status-label {
+            color: var(--muted);
+            font-size: 0.76rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.35rem;
+        }
+
+        .status-value {
+            color: var(--success);
+            font-family: "JetBrains Mono", monospace;
+            font-size: 0.99rem;
+        }
+
+        .side-nav {
+            display: grid;
+            gap: 0.45rem;
+        }
+
+        .side-nav a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.78rem 0.9rem;
+            border-radius: 14px;
+            border: 1px solid transparent;
+            color: var(--muted);
+            transition: 0.18s ease;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .side-nav a:hover {
             color: var(--text);
+            border-color: var(--line-strong);
+            background: rgba(125, 211, 252, 0.06);
+            transform: translateX(2px);
         }
 
+        .side-nav code {
+            color: var(--accent);
+            font-size: 0.78rem;
+        }
+
+        .sidebar-links {
+            display: grid;
+            gap: 0.65rem;
+            margin-top: auto;
+        }
+
+        .sidebar-button,
         .button {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             gap: 0.5rem;
-            padding: 0.85rem 1.1rem;
+            padding: 0.82rem 1rem;
             border-radius: 999px;
-            border: 1px solid var(--border);
-            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--line);
+            background: rgba(255, 255, 255, 0.03);
             color: var(--text);
             font-weight: 600;
-            transition: transform 0.15s ease, border-color 0.2s ease, background 0.2s ease;
-            cursor: pointer;
+            transition: 0.18s ease;
         }
 
+        .sidebar-button:hover,
         .button:hover {
+            border-color: var(--line-strong);
+            background: rgba(255, 255, 255, 0.05);
             transform: translateY(-1px);
-            border-color: rgba(255, 255, 255, 0.18);
-            background: rgba(255, 255, 255, 0.06);
         }
 
+        .sidebar-button.primary,
         .button.primary {
-            background: linear-gradient(135deg, rgba(110, 231, 183, 0.24), rgba(125, 211, 252, 0.22));
-            border-color: rgba(125, 211, 252, 0.25);
+            background: linear-gradient(135deg, rgba(125, 211, 252, 0.18), rgba(110, 231, 183, 0.15));
+            border-color: rgba(125, 211, 252, 0.24);
         }
 
-        header.hero {
-            padding: 5rem 0 3rem;
+        .main {
+            padding: 1.2rem;
         }
 
-        .hero-grid {
+        .topbar {
+            display: none;
+            position: sticky;
+            top: 0;
+            z-index: 12;
+            margin-bottom: 1rem;
+            padding: 0.85rem 1rem;
+            border-radius: 18px;
+            border: 1px solid var(--line);
+            background: rgba(8, 14, 27, 0.84);
+            backdrop-filter: blur(14px);
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .topbar .brand {
+            margin: 0;
+        }
+
+        .hero-shell {
             display: grid;
-            grid-template-columns: 1.3fr 0.9fr;
-            gap: 1.5rem;
-            align-items: stretch;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
         }
 
-        .hero-copy,
-        .hero-card,
-        .section-card,
-        .project,
-        .timeline-item,
-        .contact-card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 24px;
-            box-shadow: var(--shadow);
-        }
-
-        .hero-copy {
-            padding: 2rem;
+        .panel {
+            padding: 1.35rem;
         }
 
         .eyebrow {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.45rem;
             color: var(--accent);
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
             font-weight: 700;
-            font-size: 0.9rem;
-            letter-spacing: 0.03em;
             margin-bottom: 1rem;
         }
 
-        .hero h1 {
-            font-family: "Segoe UI", Inter, Arial, sans-serif;
-            font-size: clamp(2.2rem, 4.5vw, 3.8rem);
-            line-height: 1.02;
+        .hero-title {
             margin: 0 0 1rem;
+            font-family: "Space Grotesk", Inter, sans-serif;
+            font-size: clamp(2.4rem, 4.8vw, 4.6rem);
+            line-height: 1.04;
             letter-spacing: -0.04em;
-            max-width: 14ch;
-            text-wrap: balance;
+            max-width: 13.5ch;
         }
 
-        .hero p {
+        .hero-title .title-line {
+            display: block;
+            white-space: nowrap;
+        }
+
+        .hero-title .accent {
+            display: block;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-title .accent {
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-copy p,
+        .module p,
+        .contact-card p {
             color: var(--muted);
-            font-size: 1.08rem;
-            max-width: 34rem;
-            margin: 0 0 1.5rem;
+            margin: 0;
         }
 
-        .hero-actions {
+        .hero-copy p {
+            max-width: 42rem;
+        }
+
+        .hero-chips,
+        .stack-list,
+        .tool-row,
+        .action-row,
+        .contact-links {
             display: flex;
-            gap: 0.8rem;
+            gap: 0.65rem;
             flex-wrap: wrap;
-            margin-bottom: 1.5rem;
         }
 
-        .hero-metrics {
+        .hero-chips {
+            margin: 1.15rem 0;
+        }
+
+        .chip,
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            padding: 0.46rem 0.72rem;
+            border-radius: 999px;
+            border: 1px solid rgba(125, 211, 252, 0.16);
+            background: rgba(125, 211, 252, 0.05);
+            color: #d7ecff;
+            font-size: 0.99rem;
+        }
+
+        .action-row {
+            margin-top: 1.15rem;
+        }
+
+        .stats-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 0.8rem;
+            gap: 0.75rem;
+            margin-top: 1.2rem;
         }
 
-        .metric {
-            padding: 1rem;
-            border-radius: 18px;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+        .stat {
+            padding: 0.95rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            background: rgba(255, 255, 255, 0.025);
         }
 
-        .metric strong {
+        .stat strong {
             display: block;
-            font-size: 1.3rem;
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.22rem;
+            font-family: "Space Grotesk", Inter, sans-serif;
+            font-size: 1.12rem;
         }
 
-        .metric span {
+        .stat span {
             color: var(--muted);
-            font-size: 0.92rem;
+            font-size: 0.9rem;
         }
 
-        .hero-card {
-            padding: 1.25rem;
+        .console-head {
             display: flex;
-            flex-direction: column;
-            gap: 1rem;
             justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.9rem;
+            color: var(--muted);
+            font-size: 0.82rem;
+            font-family: "JetBrains Mono", monospace;
         }
 
-        .terminal {
-            background: #070b16;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 18px;
-            overflow: hidden;
-        }
-
-        .terminal-top {
+        .console-dots {
             display: flex;
-            gap: 0.4rem;
-            padding: 0.8rem 1rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            gap: 0.45rem;
         }
 
         .dot {
@@ -239,539 +425,484 @@
             background: rgba(255, 255, 255, 0.24);
         }
 
+        .terminal {
+            border-radius: 18px;
+            border: 1px solid rgba(125, 211, 252, 0.12);
+            background: linear-gradient(180deg, rgba(4, 10, 22, 0.94), rgba(3, 8, 17, 0.98));
+            overflow: hidden;
+            margin-bottom: 0.9rem;
+        }
+
         .terminal pre {
             margin: 0;
-            padding: 1rem;
-            color: #c6f6d5;
+            padding: 1rem 1rem 1.1rem;
+            font-size: 1.0rem;
+            color: #c8f7df;
             overflow: auto;
-            font-size: 0.92rem;
-            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            line-height: 1.6;
         }
 
-        .badge-wrap {
-            display: flex;
-            gap: 0.6rem;
-            flex-wrap: wrap;
-        }
-
-        .badge {
-            font-size: 0.85rem;
-            color: var(--muted);
-            padding: 0.5rem 0.75rem;
-            border-radius: 999px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            background: rgba(255, 255, 255, 0.03);
-            font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        }
-
-        section {
-            padding: 1rem 0 0;
-        }
-
-        .section-head {
-            display: flex;
-            justify-content: space-between;
-            align-items: end;
+        .module-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: 1rem;
             margin-bottom: 1rem;
         }
 
-        .section-head h2 {
-            margin: 0;
-            font-size: clamp(1.5rem, 3vw, 2.3rem);
-            letter-spacing: -0.03em;
-        }
-
-        .section-head p {
-            margin: 0;
-            color: var(--muted);
-            max-width: 60ch;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-        }
-
-        .section-card {
+        .module,
+        .contact-card {
             padding: 1.25rem;
         }
 
-        .section-card h3 {
-            margin: 0 0 0.7rem;
-            font-size: 1.05rem;
+        .module-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.8rem;
         }
 
-        .section-card p,
-        .section-card li {
+        .module h2,
+        .contact-card h2 {
+            margin: 0;
+            font-family: "Space Grotesk", Inter, sans-serif;
+            font-size: 1.35rem;
+            letter-spacing: -0.03em;
+        }
+
+        .module-label {
+            color: var(--accent);
+            font-size: 0.8rem;
+            font-family: "JetBrains Mono", monospace;
+        }
+
+        .list {
+            display: grid;
+            gap: 0.7rem;
+            margin-top: 0.95rem;
+        }
+
+        .list-item {
+            padding: 0.82rem 0.9rem;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            background: rgba(255, 255, 255, 0.025);
             color: var(--muted);
         }
 
-        .stack-list,
-        .project-links,
-        .contact-links {
-            display: flex;
-            gap: 0.7rem;
-            flex-wrap: wrap;
+        .list-item strong {
+            color: var(--text);
+            display: block;
+            margin-bottom: 0.2rem;
+            font-size: 0.99rem;
         }
 
         .project-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 1rem;
+            margin-top: 0.95rem;
         }
 
-        .project {
-            padding: 1.25rem;
-            display: flex;
-            flex-direction: column;
-            gap: 0.9rem;
+        .project-card {
+            padding: 1rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            background: rgba(255, 255, 255, 0.025);
         }
 
-        .project h3 {
-            margin: 0;
-            font-size: 1.15rem;
+        .project-card .kicker {
+            color: var(--accent);
+            font-size: 0.99rem;
+            font-family: "JetBrains Mono", monospace;
+            margin-bottom: 0.35rem;
         }
 
-        .project p,
-        .timeline-item p,
-        .contact-card p {
-            color: var(--muted);
-            margin: 0;
+        .project-card h3 {
+            margin: 0 0 0.45rem;
+            font-size: 1.20rem;
         }
 
-        .project ul {
-            margin: 0;
+        .project-card ul {
+            margin: 0.7rem 0 0;
             padding-left: 1.1rem;
             color: var(--muted);
         }
 
         .timeline {
             display: grid;
-            gap: 1rem;
+            gap: 0.9rem;
+            margin-top: 0.95rem;
         }
 
         .timeline-item {
-            padding: 1.25rem;
             display: grid;
-            grid-template-columns: 180px 1fr;
+            grid-template-columns: 145px 1fr;
             gap: 1rem;
+            padding: 0.95rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            background: rgba(255, 255, 255, 0.025);
         }
 
-        .timeline-item .date {
-            color: var(--accent-2);
-            font-weight: 700;
-            font-size: 0.95rem;
+        .timeline-date {
+            color: var(--accent);
+            font-family: "JetBrains Mono", monospace;
+            font-size: 1.0rem;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
         }
 
-        .contact-card {
-            padding: 1.5rem;
-            margin: 1.25rem 0 4rem;
+        .timeline-item h3 {
+            margin: 0 0 0.25rem;
+            font-size: 1.20rem;
         }
 
         .footer {
-            padding: 0 0 2rem;
+            margin-top: 1rem;
             color: var(--muted);
-            font-size: 0.95rem;
+            font-size: 0.92rem;
         }
 
-        .muted {
-            color: var(--muted);
+        @media (max-width: 1100px) {
+            .app {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                display: none;
+            }
+
+            .topbar {
+                display: flex;
+            }
         }
 
-        @media (max-width: 980px) {
+        @media (max-width: 900px) {
 
-            .hero-grid,
-            .grid,
+            .hero-shell,
+            .module-grid,
             .project-grid,
+            .stats-grid,
             .timeline-item {
                 grid-template-columns: 1fr;
             }
 
-            .hero h1 {
-                max-width: 12ch;
-                font-size: clamp(2.6rem, 8vw, 4.4rem);
-            }
-
-            .hero-metrics {
-                grid-template-columns: 1fr;
+            .hero-title {
+                max-width: 100%;
+                font-size: clamp(2rem, 8vw, 3.5rem);
             }
         }
 
         @media (max-width: 640px) {
-            header.hero {
-                padding-top: 3.5rem;
+            .main {
+                padding: 0.85rem;
             }
 
-            .hero h1 {
-                font-size: clamp(2.3rem, 11vw, 3.4rem);
-                max-width: 100%;
+            .panel,
+            .module,
+            .contact-card,
+            .sidebar-card {
+                border-radius: 18px;
             }
 
-            .hero-copy,
-            .hero-card,
-            .section-card,
-            .project,
-            .timeline-item,
-            .contact-card {
-                border-radius: 20px;
+            .topbar {
+                padding: 0.8rem 0.9rem;
             }
-
-            .nav-inner {
-                align-items: flex-start;
-                flex-direction: column;
-            }
-        }
-
-        .brand {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.65rem;
-            font-weight: 800;
-            letter-spacing: 0.02em;
-        }
-
-        .brand-logo {
-            width: 60px;
-            height: 60px;
-            object-fit: contain;
-            display: block;
-            filter: drop-shadow(0 2px 8px rgba(125, 211, 252, 0.18));
         }
     </style>
 </head>
 
 <body>
-    <nav class="nav">
-        <div class="container nav-inner">
-            <a class="brand" href="#top">
-                <img src="./luis.apppsec.png" alt="Luis AppSec logo" class="brand-logo">
-                <span>Luis<span>.</span>AppSec</span>
-            </a>
-            <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#experience">Experience</a>
-                <a href="#contact">Contact</a>
-            </div>
-        </div>
-    </nav>
-
-    <header class="hero" id="top">
-        <div class="container hero-grid">
-            <div class="hero-copy hero">
-                <div class="eyebrow">🛡️ Application Security Engineer</div>
-                <h1>
-                    Secure systems.<br>
-                    Scalable AppSec.<br>
-                    <span
-                        style="background: linear-gradient(135deg, #6ee7b7, #7dd3fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-                        Built for engineering teams.
-                    </span>
-                </h1>
-                <p>
-                    I’m <strong>Luis Rodriguez Castro</strong>, an AppSec engineer focused on building scalable security
-                    systems,
-                    automating vulnerability management, and helping teams ship secure software without slowing down.
-                </p>
-                <div class="hero-actions">
-                    <a class="button primary" href="#projects">View Projects</a>
-                    <a class="button" href="#contact">Contact Me</a>
-                    <a class="button" href="https://github.com/rodriguezcappsec" target="_blank">GitHub</a>
-                    <a class="button" href="https://www.linkedin.com/in/luis-rodriguezcastro/"
-                        target="_blank">LinkedIn</a>
-                </div>
-                <div class="hero-metrics">
-                    <div class="metric">
-                        <strong>AppSec</strong>
-                        <span>Secure Code review, Secure SDLC, SAST, DAST and more...</span>
-                    </div>
-                    <div class="metric">
-                        <strong>AWS + Cloud</strong>
-                        <span>Threat modeling, IAM, CI/CD, Lambda, ECS, Terraform</span>
-                    </div>
-                    <div class="metric">
-                        <strong>Security Tooling</strong>
-                        <span>Go, Node.js, Python, automation, scanning workflows, vulnerability management</span>
-                    </div>
+    <div class="app">
+        <aside class="sidebar">
+            <div class="sidebar-card">
+                <a class="brand" href="#top">
+                    <img src="./luis.apppsec.png" alt="Luis AppSec logo" class="brand-mark">
+                    <span>Luis<span>[</span>AppSec<span>]</span></span>
+                </a>
+                <div class="role-tag">Application Security Engineer</div>
+                <p>Building scalable security systems, secure workflows, and tooling that engineering teams can actually
+                    use.</p>
+                <div class="status-box">
+                    <div class="status-label">Current status</div>
+                    <div class="status-value">At OnePay shipping security</div>
                 </div>
             </div>
 
-            <aside class="hero-card">
-                <div>
-                    <div class="eyebrow">Current focus</div>
-                    <div class="terminal" aria-label="Security terminal mockup">
-                        <div class="terminal-top">
-                            <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+            <nav class="side-nav sidebar-card">
+                <a href="#top"><span>Overview</span><code>01</code></a>
+                <a href="#about"><span>About</span><code>02</code></a>
+                <a href="#skills"><span>Skills</span><code>03</code></a>
+                <a href="#projects"><span>Projects</span><code>04</code></a>
+                <a href="#experience"><span>Experience</span><code>05</code></a>
+                <a href="#contact"><span>Contact</span><code>06</code></a>
+            </nav>
+
+            <div class="sidebar-links">
+                <a class="sidebar-button primary" href="https://www.luisappsec.work" target="_blank"
+                    rel="noreferrer">Visit Portfolio</a>
+                <a class="sidebar-button" href="https://github.com/rodriguezcappsec" target="_blank"
+                    rel="noreferrer">GitHub</a>
+                <a class="sidebar-button" href="https://www.linkedin.com/in/luis-rodriguezcastro/" target="_blank"
+                    rel="noreferrer">LinkedIn</a>
+            </div>
+        </aside>
+
+        <main class="main">
+            <div class="topbar">
+                <a class="brand" href="#top">
+                    <img src="./luis.apppsec.png alt=" Luis AppSec logo" class="brand-mark">
+                    <span>Luis<span>[</span>AppSec<span>]</span></span>
+                </a>
+                <a class="button primary" href="#contact">Contact</a>
+            </div>
+
+            <section id="top" class="hero-shell">
+                <div class="panel hero-copy">
+                    <div class="eyebrow">About me</div>
+                    <h1 class="hero-title">
+                        <span class="title-line">Secure systems.</span>
+                        <span class="title-line">Scalable AppSec.</span>
+                        <span class="accent">Practical security engineering.</span>
+                    </h1>
+                    <p>
+                        I’m <strong>Luis Rodriguez Castro</strong>, an Application Security Engineer focused on secure
+                        design,
+                        threat modeling, code review, cloud security, and building security workflows that support
+                        engineering velocity.
+                    </p>
+                    <!-- <div class="hero-chips">
+                        <span class="chip">Threat Modeling</span>
+                        <span class="chip">Secure Code Review</span>
+                        <span class="chip">Cloud Security</span>
+                        <span class="chip">Tooling & Automation</span>
+                    </div> -->
+                    <div class="action-row">
+                        <a class="button primary" href="#projects">View Work</a>
+                        <a class="button" href="./Luis-Rodriguez-Castro-Resume.pdf" target="_blank"
+                            rel="noreferrer">Resume PDF</a>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat">
+                            <strong>AppSec</strong>
+                            <span>Secure SDLC, vuln triage, auth reviews, code review</span>
                         </div>
+                        <div class="stat">
+                            <strong>AWS</strong>
+                            <span>IAM, ECS, Lambda, Terraform, practical cloud controls</span>
+                        </div>
+                        <div class="stat">
+                            <strong>Tooling</strong>
+                            <span>Python, Node.js, CI/CD automation, scanning workflows</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <div class="console-head">
+                        <div class="console-dots"><span class="dot"></span><span class="dot"></span><span
+                                class="dot"></span></div>
+                        <span>appsec-console</span>
+                    </div>
+                    <div class="terminal">
                         <pre>$ whoami
 Luis Rodriguez Castro
 
 $ focus --today
-- Application Security Engineering
-- Threat Modeling (STRIDE)
-- AWS
-- Security Tooling & Automation
-- Secure Code Review
-- Secure SDLC
-- Design and Architecture Reviews
+- application security engineering
+- threat modeling (STRIDE)
+- cloud security in AWS
+- security tooling & automation
+- secure code review
 
-$ status
-Shipping practical security fixes & tools</pre>
+$ philosophy
+security should scale
+</pre>
                     </div>
-                </div>
-                <div>
-                    <div class="eyebrow">Tooling stack</div>
-                    <div class="badge-wrap">
-                        <span class="badge">Python</span>
-                        <span class="badge">Node.js</span>
-                        <span class="badge">Terraform</span>
+                    <div class="tool-row">
+                        <span class="badge">OnePay</span>
+                        <span class="badge">AppSec</span>
                         <span class="badge">AWS</span>
-                        <span class="badge">Go</span>
-                        <span class="badge">Claude</span>
-                        <span class="badge">Nuclei</span>
-                        <span class="badge">WAF</span>
-                        <span class="badge">Threat Modeling</span>
-                        <span class="badge">Burpsuite</span>
+                        <span class="badge">CI/CD</span>
+                        <span class="badge">STRIDE</span>
                     </div>
                 </div>
-            </aside>
-        </div>
-    </header>
+            </section>
 
-    <main>
-        <section id="about">
-            <div class="container">
-                <div class="section-head">
-                    <div>
-                        <h2>About me</h2>
-                        <p>I work at the intersection of software engineering and security, with a bias toward building
-                            useful things instead of just filing tickets.</p>
+            <section id="about" class="module-grid">
+                <article class="module">
+                    <div class="module-header">
+                        <h2>About</h2>
+                        <span class="module-label">/overview</span>
                     </div>
-                </div>
-                <div class="grid">
-                    <article class="section-card">
-                        <h3>What I do</h3>
-                        <p>
-                            I help teams ship safer software through secure architecture reviews, source code review,
-                            vulnerability validation, threat modeling, and CI/CD-integrated security automation.
-                        </p>
-                    </article>
-                    <article class="section-card">
-                        <h3>How I think</h3>
-                        <p>
-                            I care about security that scales. That usually means reducing manual work, designing clear
-                            controls,
-                            and giving developers guardrails that are easy to adopt.
-                        </p>
-                    </article>
-                    <article class="section-card">
-                        <h3>What I enjoy</h3>
-                        <p>
-                            AppSec, offensive security, low-level security, threat modeling, secure tooling, cloud
-                            architecture,
-                            and learning how systems actually work under the hood.
-                        </p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="skills">
-            <div class="container">
-                <div class="section-head">
-                    <div>
-                        <h2>Core skills</h2>
-                        <p>A practical mix of security engineering, software development, and cloud knowledge.</p>
-                    </div>
-                </div>
-                <div class="grid">
-                    <article class="section-card">
-                        <h3>Application Security</h3>
-                        <div class="stack-list">
-                            <span class="badge">OWASP Top</span>
-                            <span class="badge">Secure Code Review</span>
-                            <span class="badge">Threat Modeling</span>
-                            <span class="badge">Vulnerability Management</span>
-                            <span class="badge">CSP</span>
-                            <span class="badge">WAF</span>
-                            <span class="badge">SAST, DAS</span>
-                            <span class="badge">Secure Code Review in JS, Go, C# & Java</span>
-                            <span class="badge">Web Security</span>
-                            <span class="badge">Web Assessment & Reporting</span>
+                    <p>I work at the intersection of security engineering and software delivery, with a bias toward
+                        building practical controls instead of adding friction.</p>
+                    <div class="list">
+                        <div class="list-item"><strong>What I do</strong>Help teams ship safer software through secure
+                            design reviews, code review, threat modeling, and CI/CD-integrated security automation.
                         </div>
-                    </article>
-                    <article class="section-card">
-                        <h3>Cloud & DevSecOps</h3>
-                        <div class="stack-list">
-                            <span class="badge">AWS</span>
-                            <span class="badge">IAM</span>
-                            <span class="badge">Lambda</span>
-                            <span class="badge">ECS</span>
-                            <span class="badge">S3</span>
-                            <span class="badge">GitHub & Gitlab</span>
-                            <span class="badge">Terraform</span>
-                        </div>
-                    </article>
-                    <article class="section-card">
-                        <h3>Programming</h3>
-                        <div class="stack-list">
-                            <span class="badge">Python</span>
-                            <span class="badge">JavaScript</span>
-                            <span class="badge">Node.js</span>
-                            <span class="badge">React</span>
-                            <span class="badge">SQL</span>
-                            <span class="badge">Go</span>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="projects">
-            <div class="container">
-                <div class="section-head">
-                    <div>
-                        <h2>On the Job Work I've Done</h2>
+                        <div class="list-item"><strong>How I think</strong>Security should scale. That means reducing
+                            manual work, designing clear controls, and giving developers guidance that is actually
+                            actionable.</div>
                     </div>
-                </div>
-                <div class="project-grid">
-                    <article class="project">
-                        <div class="eyebrow">Project 01</div>
-                        <h3>CI/CD Package Vulnerability Management Workflow</h3>
-                        <p>
-                            Built automation to process security findings, reduce manual triage, and route remediation
-                            work more efficiently.
-                        </p>
-                        <ul>
-                            <li>Integrated security workflows into CI/CD.</li>
-                            <li>Automated issue handling and developer handoff.</li>
-                            <li>Improved consistency for vulnerability management.</li>
-                        </ul>
-                    </article>
+                </article>
 
-                    <article class="project">
-                        <div class="eyebrow">Project 02</div>
-                        <h3>Nuclei Scanning Automation in AWS</h3>
-                        <p>
-                            Designed scalable scanning workflows using AWS services and automated domain discovery to
-                            keep targets fresh.
-                        </p>
-                        <ul>
-                            <li>Used ECS-based scanning workflows.</li>
-                            <li>Prefetched domain data and updated target inventories.</li>
-                            <li>Focused on maintainability and operational scale.</li>
-                        </ul>
-                    </article>
-
-                    <article class="project">
-                        <div class="eyebrow">Project 03</div>
-                        <h3>Vulnerability Management System CLI Tool</h3>
-                        <p>
-                            Worked on a CLI tool using Go to help security teams manage vulnerabilities, track
-                            remediation progress, and generate reports for stakeholders.
-                        </p>
-                        <ul>
-                            <li>Built a command-line interface for managing vulnerabilities.</li>
-                            <li>Improved visibility into vulnerability reports and tuning.</li>
-                            <li>Reduced repeated maintenance across repositories.</li>
-                        </ul>
-                    </article>
-
-                    <article class="project">
-                        <div class="eyebrow">Project 04</div>
-                        <h3>Threat Modeling & Secure Design Reviews</h3>
-                        <p>
-                            Performed STRIDE-based analysis for modern application and tokenization architectures,
-                            mapping threats to actionable mitigations.
-                        </p>
-                        <ul>
-                            <li>Modeled trust boundaries and data flows.</li>
-                            <li>Focused on realistic attack paths and mitigations.</li>
-                            <li>Made outputs understandable for engineering teams.</li>
-                        </ul>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="experience">
-            <div class="container">
-                <div class="section-head">
-                    <div>
-                        <h2>Experience highlights</h2>
+                <article class="module" id="skills">
+                    <div class="module-header">
+                        <h2>Core Skills</h2>
+                        <span class="module-label">/capabilities</span>
                     </div>
-                </div>
-                <div class="timeline">
-                    <article class="timeline-item">
-                        <div class="date">Recent</div>
-                        <div>
-                            <h3>OnePay — Application Security Engineer</h3>
+                    <p>A practical mix of application security, cloud security, and software engineering.</p>
+                    <div class="list">
+                        <div class="list-item"><strong>Application Security</strong>
+                            <div class="stack-list"><span class="badge">OWASP Top 10</span><span class="badge">Secure
+                                    Code Review/Web Security</span><span class="badge">Threat Modeling</span><span
+                                    class="badge">SDLC Security</span><span class="badge">AuthN/AuthZ</span><span
+                                    class="badge">Burpsuite</span><span class="badge">SAST/DAST/SCA</span><span
+                                    class="badge">Security Tools development & Automation</span></div>
+                        </div>
+                        <div class="list-item"><strong>Cloud & DevSecOps</strong>
+                            <div class="stack-list"><span class="badge">AWS</span><span class="badge">IAM</span><span
+                                    class="badge">IAC</span><span class="badge">VPC/ECS/EC2/ECR</span><span
+                                    class="badge">Security Groups & NACLs</span><span class="badge">Lambdas</span><span
+                                    class="badge">Github & Gitlab</span><span class="badge">Terraform</span><span
+                                    class="badge">Cloudflare</span></div>
+                        </div>
+                        <div class="list-item"><strong>Programming & Tooling</strong>
+                            <div class="stack-list"><span class="badge">Go</span><span
+                                    class="badge">JavaScript</span><span class="badge">Node.js</span><span
+                                    class="badge">React</span><span class="badge">Python</span><span
+                                    class="badge">Linux</span><span class="badge">Nuclei</span><span
+                                    class="badge">SQL</span></div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <section id="projects" class="module-grid">
+                <article class="module">
+                    <div class="module-header">
+                        <h2>Selected Work</h2>
+                        <span class="module-label">/projects</span>
+                    </div>
+                    <p>Systems designed to make security easier to adopt and harder to ignore.</p>
+                    <div class="project-grid">
+                        <div class="project-card">
+                            <div class="kicker">01 / Workflow</div>
+                            <h3>CI/CD Package Vulnerability Management Workflow</h3>
                             <p>
-                                Performed application security efforts with an emphasis on practical controls,
-                                architecture review, secure code review, vulnerability management,
-                                tool development and secure engineering collaboration.
+                                Built automation to process security findings, reduce manual triage, and route
+                                remediation
+                                work more efficiently.
                             </p>
+                            <ul>
+                                <li>Integrated security workflows into CI/CD.</li>
+                                <li>Automated issue handling and developer handoff.</li>
+                                <li>Improved consistency for vulnerability management.</li>
+                            </ul>
                         </div>
-                    </article>
-
-                    <article class="timeline-item">
-                        <div class="date">Earlier</div>
-                        <div>
-                            <h3>AppSec Engineering & Internal Security Tooling</h3>
+                        <div class="project-card">
+                            <div class="kicker">02 / DAST Scanner</div>
+                            <h3>Nuclei Scanning Automation in AWS</h3>
                             <p>
-                                Built and maintained security tooling in Python, Node.js and Go, performed source code
-                                reviews, validated findings,
-                                and contributed to scalable security processes across engineering teams.
+                                Designed scalable scanning workflows using AWS services and automated domain discovery
+                                to keep targets fresh.
                             </p>
+                            <ul>
+                                <li>Used ECS-based scanning workflows.</li>
+                                <li>Prefetched domain data and updated target inventories.</li>
+                                <li>Focused on maintainability and operational scale.</li>
+                            </ul>
                         </div>
-                    </article>
-
-                    <article class="timeline-item">
-                        <div class="date">Ongoing</div>
-                        <div>
-                            <h3>Continuous learning</h3>
+                        <div class="project-card">
+                            <div class="kicker">03 / Platform</div>
+                            <h3>Vulnerability Management System CLI Tool</h3>
                             <p>
-                                Expanding into the Cloud with AWS and IAC-based infrastructure,
-                                deeper secure design work with threat modeling, exploring low-level security
-                                concepts to better understand how to secure complex systems and AI security topics as
-                                they evolve.
+                                Worked on a CLI tool using Go to help security teams manage vulnerabilities, track
+                                remediation progress, and generate reports for stakeholders.
                             </p>
+                            <ul>
+                                <li>Built a command-line interface for managing vulnerabilities.</li>
+                                <li>Improved visibility into vulnerability reports and tuning.</li>
+                                <li>Reduced repeated maintenance across repositories.</li>
+                            </ul>
                         </div>
-                    </article>
-                </div>
-            </div>
-        </section>
+                        <div class="project-card">
+                            <div class="kicker">04 / Design</div>
+                            <h3>Threat Modeling & Secure Design Reviews</h3>
+                            <p>
+                                Performed STRIDE-based analysis for modern application and tokenization architectures,
+                                mapping threats to actionable mitigations.
+                            </p>
+                            <ul>
+                                <li>Modeled trust boundaries and data flows.</li>
+                                <li>Focused on realistic attack paths and mitigations.</li>
+                                <li>Made outputs understandable for engineering teams.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
 
-        <section id="contact">
-            <div class="container">
+                <article class="module" id="experience">
+                    <div class="module-header">
+                        <h2>Experience</h2>
+                        <span class="module-label">/timeline</span>
+                    </div>
+                    <p>A quick view of the environments where I’ve applied application security, cloud security, and
+                        engineering-focused practices.</p>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">Current</div>
+                            <div>
+                                <h3>OnePay — Application Security Engineer</h3>
+                                <p>Performed application security efforts with an emphasis on practical controls,
+                                    architecture review, secure code review, vulnerability management,
+                                    tool development and secure engineering collaboration.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">Earlier</div>
+                            <div>
+                                <h3>Optimum / Epsilon / FloQast — AppSec & Security Engineering</h3>
+                                <p>Built and maintained security tooling, integrated security into CI/CD, performed
+                                    secure code reviews, validated findings, and supported scalable security processes
+                                    across engineering teams.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">Ongoing</div>
+                            <div>
+                                <h3>Continuous learning</h3>
+                                <p> Expanding into the Cloud with AWS and IAC-based infrastructure,
+                                    deeper secure design work with threat modeling, exploring low-level security
+                                    concepts to better understand how to secure complex systems and AI security topics
+                                    as they evolve.</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <section id="contact">
                 <div class="contact-card">
-                    <div class="section-head">
-                        <div>
-                            <h2>Let’s connect</h2>
-                        </div>
+                    <div class="module-header">
+                        <h2>Contact</h2>
+                        <span class="module-label">/links</span>
                     </div>
-                    <p>
-                        I’m interested in AppSec, security engineering, cloud security, threat modeling, and building
-                        tools that make security easier to adopt.
-                    </p>
+                    <p>I’m interested in Application Security, Cloud Security, Secure Design, Threat Modeling, and
+                        building security tools/automation that help engineering teams move with confidence.</p>
                     <div class="contact-links" style="margin-top: 1rem;">
                         <a class="button" href="https://github.com/rodriguezcappsec" target="_blank"
                             rel="noreferrer">GitHub</a>
-                        <a class="button" href="https://www.linkedin.com/in/luis-rodriguezcastro" target="_blank"
+                        <a class="button" href="https://www.linkedin.com/in/luis-rodriguezcastro/" target="_blank"
                             rel="noreferrer">LinkedIn</a>
                     </div>
+                    <div class="footer">© <span id="year"></span> Luis Rodriguez Castro. Built for GitHub Pages.</div>
                 </div>
-                <div class="footer">
-                    <div class="container" style="padding: 0; width: 100%;">
-                        © <span id="year"></span> Luis Rodriguez Castro. Built for GitHub Pages.
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+            </section>
+        </main>
+    </div>
 
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
