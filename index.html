@@ -5,8 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Luis Rodriguez Castro | AppSec Engineer</title>
-    <meta name="description"
-        content="AppSec portfolio for Luis Rodriguez Castro — Application Security Engineer" />
+    <meta name="description" content="AppSec portfolio for Luis Rodriguez Castro — Application Security Engineer" />
     <style>
         :root {
             --bg: #0b1020;
@@ -424,13 +423,32 @@
                 flex-direction: column;
             }
         }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.65rem;
+            font-weight: 800;
+            letter-spacing: 0.02em;
+        }
+
+        .brand-logo {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            display: block;
+            filter: drop-shadow(0 2px 8px rgba(125, 211, 252, 0.18));
+        }
     </style>
 </head>
 
 <body>
     <nav class="nav">
         <div class="container nav-inner">
-            <a class="brand" href="#top">Luis<span>.</span>AppSec</a>
+            <a class="brand" href="#top">
+                <img src="./luis.apppsec.png" alt="Luis AppSec logo" class="brand-logo">
+                <span>Luis<span>.</span>AppSec</span>
+            </a>
             <div class="nav-links">
                 <a href="#about">About</a>
                 <a href="#skills">Skills</a>
@@ -652,7 +670,8 @@ Shipping practical security fixes & tools</pre>
                         <div class="eyebrow">Project 03</div>
                         <h3>Vulnerability Management System CLI Tool</h3>
                         <p>
-                            Worked on a CLI tool using Go to help security teams manage vulnerabilities, track remediation progress, and generate reports for stakeholders.
+                            Worked on a CLI tool using Go to help security teams manage vulnerabilities, track
+                            remediation progress, and generate reports for stakeholders.
                         </p>
                         <ul>
                             <li>Built a command-line interface for managing vulnerabilities.</li>
@@ -705,7 +724,7 @@ Shipping practical security fixes & tools</pre>
                             <p>
                                 Built and maintained security tooling in Python, Node.js and Go, performed source code
                                 reviews, validated findings,
-                                and contributed to scalable security processes across engineering teams. 
+                                and contributed to scalable security processes across engineering teams.
                             </p>
                         </div>
                     </article>
@@ -716,8 +735,9 @@ Shipping practical security fixes & tools</pre>
                             <h3>Continuous learning</h3>
                             <p>
                                 Expanding into the Cloud with AWS and IAC-based infrastructure,
-                                deeper secure design work with threat modeling, exploring low-level security 
-                                concepts to better understand how to secure complex systems and AI security topics as they evolve.
+                                deeper secure design work with threat modeling, exploring low-level security
+                                concepts to better understand how to secure complex systems and AI security topics as
+                                they evolve.
                             </p>
                         </div>
                     </article>
