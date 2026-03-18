@@ -28,7 +28,7 @@
             --success: #bbf7d0;
             --shadow: 0 24px 70px rgba(0, 0, 0, 0.42);
             --radius: 22px;
-            --sidebar-width: 310px;
+            --sidebar-width: 330px;
         }
 
         * {
@@ -98,6 +98,13 @@
             flex-direction: column;
             gap: 1rem;
             z-index: 10;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        .side-nav a span {
+            min-width: 0;
+            overflow-wrap: anywhere;
         }
 
         .sidebar-card,
@@ -680,8 +687,8 @@
                     </div> -->
                     <div class="action-row">
                         <a class="button primary" href="#projects">View Work</a>
-                        <a class="button" href="./Luis-Rodriguez-Castro-Resume.pdf" target="_blank"
-                            rel="noreferrer">Resume PDF</a>
+                        <!-- <a class="button" href="./Luis-Rodriguez-Castro-Resume.pdf" target="_blank"
+                            rel="noreferrer">Resume PDF</a> -->
                     </div>
                     <div class="stats-grid">
                         <div class="stat">
